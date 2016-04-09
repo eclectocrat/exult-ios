@@ -232,17 +232,50 @@ void TouchUI_iOS::onDpadLocationChanged()
 
 /* ---------------------------------------------------------------------- */
 
-const char* ios_get_documents_dir()
+const char* ios_get_documents_dir(bool * hasData)
 {
+    NSString *docDirectory = nil;
 	if (docs_dir[0] == 0) {
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *docDirectory = [paths objectAtIndex:0];
+		docDirectory = [paths objectAtIndex:0];
 		strcpy(docs_dir, docDirectory.UTF8String);
-		printf("Documents: %s\n", docs_dir);
-	//	chdir(docs_dir);
-//		*strncpy(docs_dir, , sizeof(docs_dir)-1) = 0;
 	}
+    
+    if (hasData) {
+        if(!docDirectory) {
+            NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            docDirectory = [paths objectAtIndex:0];
+        }
+        
+        BOOL isDir = NO;
+        if([[NSFileManager defaultManager] fileExistsAtPath:[docDirectory stringByAppendingPathComponent:@"game"] isDirectory:&isDir]) {
+            if(isDir) {
+                *hasData = YES;
+                return docs_dir;
+            }
+        }
+        *hasData = NO;
+    }
+    
 	return docs_dir;
+}
+
+void copy_data_to_documents_dir (const char * path)
+{
+    bool has_data = false;
+
+    NSString * src = [NSString stringWithUTF8String:path];
+    NSString * dest = [NSString stringWithUTF8String:ios_get_documents_dir(&has_data)];
+    
+    NSError * err = nil;
+    BOOL result = [[NSFileManager defaultManager] copyItemAtPath:src toPath:[dest stringByAppendingPathComponent:@"game"] error:&err];
+    
+    if(!result) {
+        NSLog(@"Error copying data to documents directory: %@", err);
+    }
+    else {
+        NSLog(@"Copied game data to documents directory.");
+    }
 }
 
 void ios_open_url(const char *sUrl)

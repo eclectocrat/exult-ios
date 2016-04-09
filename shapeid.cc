@@ -58,34 +58,6 @@ using std::max;
 Shape_manager *Shape_manager::instance = 0;
 
 /*
- *  Singletons:
- */
-Game_window *Game_singletons::gwin = 0;
-Game_map *Game_singletons::gmap = 0;
-Effects_manager *Game_singletons::eman = 0;
-Shape_manager *Game_singletons::sman = 0;
-Usecode_machine *Game_singletons::ucmachine = 0;
-Game_clock *Game_singletons::gclock = 0;
-Palette *Game_singletons::pal = 0;
-Gump_manager *Game_singletons::gumpman = 0;
-Party_manager *Game_singletons::partyman = 0;
-class FileSystem *Game_singletons::pent_filesys = 0;
-
-void Game_singletons::init(
-    Game_window *g
-) {
-	gwin = g;
-	gmap = g->get_map();
-	eman = g->get_effects();
-	sman = Shape_manager::get_instance();
-	ucmachine = g->get_usecode();
-	gclock = g->get_clock();
-	pal = g->get_pal();
-	gumpman = g->get_gump_man();
-	partyman = g->get_party_man();
-}
-
-/*
  *  Create shape manager.
  */
 Shape_manager::Shape_manager(

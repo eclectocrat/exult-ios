@@ -21,7 +21,6 @@
 
 /*
  *  'Singletons' used throughout the code.
- *  NOTE:  For now, the implementation is in shapeid.cc.
  */
 class Game_singletons {
 protected:

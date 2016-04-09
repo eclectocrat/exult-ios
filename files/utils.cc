@@ -800,9 +800,16 @@ void setup_program_paths() {
 	       savehome_dir(home_dir), gamehome_dir(".");
 
 #if defined(__IPHONEOS__)
-	config_dir = ios_get_documents_dir();
+    bool has_data = false;
+	config_dir = ios_get_documents_dir(&has_data);
 	savehome_dir = config_dir + "/save";
 	gamehome_dir = config_dir + "/game";
+    
+    if(!has_data) {
+        string source_data_dir = "./data/game";
+        copy_data_to_documents_dir(source_data_dir.c_str());
+    }
+    
 #elif defined(MACOSX)
 	config_dir += "/Library/Preferences";
 	savehome_dir += "/Library/Application Support/Exult";

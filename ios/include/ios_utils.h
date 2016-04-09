@@ -14,7 +14,8 @@ public:
 	void onDpadLocationChanged();
 };
 
-const char* ios_get_documents_dir();
+const char* ios_get_documents_dir(bool * = NULL);
 void ios_open_url(const char *);
+void copy_data_to_documents_dir(const char *);
 
 #endif

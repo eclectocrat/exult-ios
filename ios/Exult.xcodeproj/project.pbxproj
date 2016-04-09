@@ -15,6 +15,7 @@
 		8AC797C71C8D0E4F001AF014 /* unzip.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8AC797C51C8D0E4F001AF014 /* unzip.cc */; };
 		8AC797C81C8D0E4F001AF014 /* zip.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8AC797C61C8D0E4F001AF014 /* zip.cc */; };
 		8AD4A9311A92B9DB0004762D /* iphoneOptions_gump.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8AD4A92F1A92B9DB0004762D /* iphoneOptions_gump.cc */; };
+		D693180B1CB95D66009EC093 /* singles.cc in Sources */ = {isa = PBXBuildFile; fileRef = D693180A1CB95D66009EC093 /* singles.cc */; };
 		E700DBBA1A6E2CE7006C8BE4 /* Audio.cc in Sources */ = {isa = PBXBuildFile; fileRef = E700DB001A6E2CE7006C8BE4 /* Audio.cc */; };
 		E700DBBB1A6E2CE7006C8BE4 /* AudioChannel.cc in Sources */ = {isa = PBXBuildFile; fileRef = E700DB021A6E2CE7006C8BE4 /* AudioChannel.cc */; };
 		E700DBBC1A6E2CE7006C8BE4 /* AudioMixer.cc in Sources */ = {isa = PBXBuildFile; fileRef = E700DB041A6E2CE7006C8BE4 /* AudioMixer.cc */; };
@@ -346,6 +347,7 @@
 		8AD4A92F1A92B9DB0004762D /* iphoneOptions_gump.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = iphoneOptions_gump.cc; path = ../gumps/iphoneOptions_gump.cc; sourceTree = "<group>"; };
 		8AD4A9301A92B9DB0004762D /* iphoneOptions_gump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iphoneOptions_gump.h; path = ../gumps/iphoneOptions_gump.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D693180A1CB95D66009EC093 /* singles.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = singles.cc; path = ../singles.cc; sourceTree = "<group>"; };
 		E700DB001A6E2CE7006C8BE4 /* Audio.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Audio.cc; sourceTree = "<group>"; };
 		E700DB011A6E2CE7006C8BE4 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
 		E700DB021A6E2CE7006C8BE4 /* AudioChannel.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AudioChannel.cc; sourceTree = "<group>"; };
@@ -1236,6 +1238,7 @@
 				E700DC7D1A6E30A7006C8BE4 /* shapeid.cc */,
 				E700DC7E1A6E30A7006C8BE4 /* shapeid.h */,
 				E700DC7F1A6E30A7006C8BE4 /* singles.h */,
+				D693180A1CB95D66009EC093 /* singles.cc */,
 				E700DC801A6E30A7006C8BE4 /* tiles.h */,
 				E700DC811A6E30A7006C8BE4 /* touchscreen.cc */,
 				E700DC821A6E30A7006C8BE4 /* touchscreen.h */,
@@ -2072,6 +2075,7 @@
 				E700DBE11A6E2CE7006C8BE4 /* forked_player.cc in Sources */,
 				E700DC2C1A6E2D6A006C8BE4 /* soundtest.cc in Sources */,
 				E700DC1C1A6E2CE7006C8BE4 /* UnixSeqMidiDriver.cpp in Sources */,
+				D693180B1CB95D66009EC093 /* singles.cc in Sources */,
 				E700DCB41A6E30A7006C8BE4 /* xdrag.cc in Sources */,
 				E700DCB11A6E30A7006C8BE4 /* txtscroll.cc in Sources */,
 				E700DC131A6E2CE7006C8BE4 /* timidity_mix.cpp in Sources */,
